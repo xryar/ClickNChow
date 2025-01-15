@@ -11,4 +11,13 @@
     <string name="tv_name">Full Name</string>
     <string name="ed_name">Type your full name</string>
     <string name="btn_continue">Continue</string>
+    <string name="tv_phone_number">Phone No.</string>
+    <string name="ed_phone_number">Type your phone number</string>
+    <string name="tv_address">Address</string>
+    <string name="ed_address">Type your address</string>
+    <string name="tv_house_number">House No.</string>
+    <string name="ed_house_number">Type your house number</string>
+    <string name="tv_city">City</string>
+    <string name="ed_city">Select your city</string>
+    <string name="btn_register_now">Sign Up Now</string>
 </resources>
