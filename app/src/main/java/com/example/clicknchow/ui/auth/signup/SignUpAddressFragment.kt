@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.clicknchow.databinding.FragmentSignUpAddressBinding
-import com.example.clicknchow.databinding.FragmentSignUpBinding
 
 class SignUpAddressFragment : Fragment() {
 
