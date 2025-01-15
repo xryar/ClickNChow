@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_marginTop="24dp"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="26dp"
+    android:orientation="vertical"
+    tools:context=".ui.auth.signin.SignInFragment">
+
+    <TextView
+        android:id="@+id/tv_email"
+        style="@style/TextView.PoppinsNormal16sp020202"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_email"/>
+
+    <EditText
+        android:id="@+id/ed_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/shape_rectangle_outline_8_020202"
+        style="@style/EditText.PoppinsNormal14sp8D92A3"
+        android:hint="@string/ed_email"/>
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        style="@style/TextView.PoppinsNormal16sp020202"
+        android:text="@string/tv_password"/>
+
+    <EditText
+        android:id="@+id/ed_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/shape_rectangle_outline_8_020202"
+        style="@style/EditText.PoppinsNormal14sp8D92A3"
+        android:hint="@string/ed_password"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_sign_in"
+        android:layout_marginTop="24dp"
+        style="@style/Button.Primary"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_register"
+        android:layout_marginTop="12dp"
+        style="@style/Button.Secondary"/>
+</LinearLayout>
