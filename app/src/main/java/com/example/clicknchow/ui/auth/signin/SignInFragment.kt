@@ -1,13 +1,11 @@
 package com.example.clicknchow.ui.auth.signin
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.clicknchow.R
+import androidx.fragment.app.Fragment
 import com.example.clicknchow.databinding.FragmentSignInBinding
 import com.example.clicknchow.ui.auth.AuthActivity
 
