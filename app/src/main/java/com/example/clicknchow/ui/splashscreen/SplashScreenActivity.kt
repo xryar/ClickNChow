@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import com.example.clicknchow.MainActivity
 import com.example.clicknchow.databinding.ActivitySplashScreenBinding
+import com.example.clicknchow.ui.auth.AuthActivity
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -16,8 +16,9 @@ class SplashScreenActivity : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         Handler().postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
             finish()
         }, 3000)
