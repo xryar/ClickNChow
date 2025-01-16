@@ -20,6 +20,13 @@
         <item name="android:textSize">22sp</item>
     </style>
 
+
+    <style name="TextView.PoppinsNormal20sp020202">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">#020202</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="TextView.PoppinsNormal14sp8D92A3">
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textColor">#8D92A3</item>

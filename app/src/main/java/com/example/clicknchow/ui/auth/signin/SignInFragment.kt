@@ -18,7 +18,6 @@ class SignInFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         _binding = FragmentSignInBinding.inflate(layoutInflater, container, false)
         val view = binding.root
 
