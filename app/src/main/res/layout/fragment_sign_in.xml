@@ -22,9 +22,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:inputType="textEmailAddress"
         android:background="@drawable/shape_rectangle_outline_8_020202"
         style="@style/EditText.PoppinsNormal14sp8D92A3"
-        android:hint="@string/ed_email"/>
+        android:hint="@string/ed_email"
+        tools:ignore="Autofill" />
 
     <TextView
         android:id="@+id/tv_password"
@@ -39,9 +41,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:inputType="textPassword"
         android:background="@drawable/shape_rectangle_outline_8_020202"
         style="@style/EditText.PoppinsNormal14sp8D92A3"
-        android:hint="@string/ed_password"/>
+        android:hint="@string/ed_password"
+        tools:ignore="Autofill" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
