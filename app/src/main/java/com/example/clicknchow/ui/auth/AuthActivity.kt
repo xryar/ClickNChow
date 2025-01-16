@@ -1,6 +1,5 @@
 package com.example.clicknchow.ui.auth
 
-import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
