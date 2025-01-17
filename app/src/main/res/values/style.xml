@@ -64,4 +64,9 @@
         <item name="android:gravity">left</item>
     </style>
 
+    <style name="RatingBar">
+        <item name="colorControlNormal">#ECECEC</item>
+        <item name="colorControlActivated">#FFC700</item>
+    </style>
+
 </resources>
