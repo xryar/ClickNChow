@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.clicknchow.databinding.FragmentSignInBinding
+import com.example.clicknchow.ui.MainActivity
 import com.example.clicknchow.ui.auth.AuthActivity
 
 class SignInFragment : Fragment() {
@@ -26,6 +27,12 @@ class SignInFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnLogin.setOnClickListener {
+            val login = Intent(activity, MainActivity::class.java)
+            startActivity(login)
+            activity?.finish()
+        }
 
         binding.btnRegister.setOnClickListener {
             val register = Intent(activity, AuthActivity::class.java)
