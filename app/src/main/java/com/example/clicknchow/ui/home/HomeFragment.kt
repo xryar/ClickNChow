@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.clicknchow.databinding.FragmentHomeBinding
 import com.example.clicknchow.model.dummy.HomeModel
 import com.example.clicknchow.ui.home.customtab.SectionPagerAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {
 
@@ -46,11 +47,16 @@ class HomeFragment : Fragment() {
         binding.rvFoodHorizontal.layoutManager = layoutManager
         binding.rvFoodHorizontal.adapter = adapter
 
-        val sectionPagerAdapter = SectionPagerAdapter(
-            childFragmentManager
-        )
+        val sectionPagerAdapter = SectionPagerAdapter(this)
         binding.viewPager.adapter = sectionPagerAdapter
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            tab.text = when(position) {
+                0 -> "New Taste"
+                1 -> "Popular"
+                2 -> "Recommended"
+                else -> ""
+            }
+        }.attach()
     }
 
     private fun initDataDummy() {
