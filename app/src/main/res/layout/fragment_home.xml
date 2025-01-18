@@ -20,13 +20,14 @@
             android:src="@drawable/ic_picture_empty"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/tv_greeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Greetings User"
+            android:text="@string/title_greeting"
             style="@style/TextView.PoppinsNormal22sp020202"
             android:layout_marginStart="24dp"
             android:layout_marginTop="30dp"
@@ -37,7 +38,7 @@
             android:id="@+id/tv_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Let's get some foods"
+            android:text="@string/subtitle_home"
             style="@style/TextView.PoppinsNormal14sp8D92A3"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="24dp"
@@ -52,6 +53,10 @@
         android:layout_width="match_parent"
         android:layout_height="222dp"
         android:layout_marginTop="24dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
         tools:listitem="@layout/item_food_horizontal"
         tools:itemCount="1"/>
 

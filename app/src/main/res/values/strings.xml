@@ -27,4 +27,7 @@
     <string name="title_home">Home</string>
     <string name="title_order">Order</string>
     <string name="title_profile">Profile</string>
+    <string name="title_greeting">Greetings User</string>
+    <string name="subtitle_home">Let\'s get some foods</string>
+    <string name="food_name">Food Name</string>
 </resources>
