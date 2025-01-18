@@ -2,6 +2,7 @@ package com.example.clicknchow.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.clicknchow.databinding.ItemFoodHorizontalBinding
@@ -9,8 +10,6 @@ import com.example.clicknchow.model.dummy.HomeModel
 
 class HomeAdapter(private val listData: List<HomeModel>) :
     RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
-
-    private lateinit var onItemClickCallback: OnItemClickCallback
 
     class ViewHolder(var binding: ItemFoodHorizontalBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -31,17 +30,13 @@ class HomeAdapter(private val listData: List<HomeModel>) :
             .load(data.src)
             .into(holder.binding.ivProduct)
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listData[holder.adapterPosition])
+            Toast.makeText(holder.itemView.context, data.title, Toast.LENGTH_SHORT).show()
         }
 
     }
 
     override fun getItemCount(): Int {
         return listData.size
-    }
-
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
     }
 
     interface OnItemClickCallback {

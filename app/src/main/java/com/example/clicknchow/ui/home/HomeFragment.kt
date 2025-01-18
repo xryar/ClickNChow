@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.clicknchow.databinding.FragmentHomeBinding
 import com.example.clicknchow.model.dummy.HomeModel
+import com.example.clicknchow.ui.home.customtab.SectionPagerAdapter
 
 class HomeFragment : Fragment() {
 
@@ -44,6 +45,12 @@ class HomeFragment : Fragment() {
         )
         binding.rvFoodHorizontal.layoutManager = layoutManager
         binding.rvFoodHorizontal.adapter = adapter
+
+        val sectionPagerAdapter = SectionPagerAdapter(
+            childFragmentManager
+        )
+        binding.viewPager.adapter = sectionPagerAdapter
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
 
     private fun initDataDummy() {
