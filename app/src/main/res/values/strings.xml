@@ -30,4 +30,5 @@
     <string name="title_greeting">Greetings User</string>
     <string name="subtitle_home">Let\'s get some foods</string>
     <string name="food_name">Food Name</string>
+    <string name="tv_food_price">Rp. 28.000</string>
 </resources>
