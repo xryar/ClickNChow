@@ -39,7 +39,4 @@ class HomeAdapter(private val listData: List<HomeModel>) :
         return listData.size
     }
 
-    interface OnItemClickCallback {
-        fun onItemClicked(data: HomeModel)
-    }
 }
