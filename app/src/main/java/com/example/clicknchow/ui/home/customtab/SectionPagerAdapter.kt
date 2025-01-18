@@ -1,8 +1,6 @@
 package com.example.clicknchow.ui.home.customtab
 
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.clicknchow.ui.home.customtab.newtaste.HomeNewTasteFragment
 import com.example.clicknchow.ui.home.customtab.popular.HomePopularFragment
