@@ -1,4 +1,4 @@
-package com.example.clicknchow.ui.home.customtab.popular
+package com.example.clicknchow.ui.home.homeviewpager.newtaste
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.clicknchow.databinding.FragmentHomeNewTasteBinding
 import com.example.clicknchow.model.dummy.HomeVerticalModel
-import com.example.clicknchow.ui.home.customtab.newtaste.HomeNewTasteAdapter
 
-class HomePopularFragment : Fragment() {
+class HomeNewTasteFragment : Fragment() {
 
     private var _binding: FragmentHomeNewTasteBinding? = null
     private val binding get() = _binding!!

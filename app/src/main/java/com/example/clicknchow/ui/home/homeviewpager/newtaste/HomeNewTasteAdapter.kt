@@ -1,4 +1,4 @@
-package com.example.clicknchow.ui.home.customtab.newtaste
+package com.example.clicknchow.ui.home.homeviewpager.newtaste
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

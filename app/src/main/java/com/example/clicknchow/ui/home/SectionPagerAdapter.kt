@@ -1,10 +1,10 @@
-package com.example.clicknchow.ui.home.customtab
+package com.example.clicknchow.ui.home
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.clicknchow.ui.home.customtab.newtaste.HomeNewTasteFragment
-import com.example.clicknchow.ui.home.customtab.popular.HomePopularFragment
-import com.example.clicknchow.ui.home.customtab.recommended.HomeRecommendedFragment
+import com.example.clicknchow.ui.home.homeviewpager.newtaste.HomeNewTasteFragment
+import com.example.clicknchow.ui.home.homeviewpager.popular.HomePopularFragment
+import com.example.clicknchow.ui.home.homeviewpager.recommended.HomeRecommendedFragment
 
 class SectionPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(fragmentManager) {
 

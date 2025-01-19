@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.clicknchow.databinding.FragmentHomeBinding
 import com.example.clicknchow.model.dummy.HomeModel
-import com.example.clicknchow.ui.home.customtab.SectionPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {

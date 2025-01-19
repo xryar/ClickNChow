@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.clicknchow.databinding.FragmentProfileBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class ProfileFragment : Fragment() {
 
@@ -21,6 +22,24 @@ class ProfileFragment : Fragment() {
         val view = binding.root
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        showViewPager()
+    }
+
+    private fun showViewPager() {
+        val sectionPagerAdapter = SectionPagerAdapter(this)
+        binding.viewPager.adapter = sectionPagerAdapter
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            tab.text = when(position) {
+                0 -> "Account"
+                1 -> "ClickNChow"
+                else -> ""
+            }
+        }.attach()
     }
 
     override fun onDestroyView() {

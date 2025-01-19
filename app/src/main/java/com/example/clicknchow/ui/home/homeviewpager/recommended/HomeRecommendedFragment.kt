@@ -1,4 +1,4 @@
-package com.example.clicknchow.ui.home.customtab.recommended
+package com.example.clicknchow.ui.home.homeviewpager.recommended
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.clicknchow.databinding.FragmentHomeNewTasteBinding
 import com.example.clicknchow.model.dummy.HomeVerticalModel
-import com.example.clicknchow.ui.home.customtab.newtaste.HomeNewTasteAdapter
+import com.example.clicknchow.ui.home.homeviewpager.newtaste.HomeNewTasteAdapter
 
 class HomeRecommendedFragment : Fragment() {
 
