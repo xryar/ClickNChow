@@ -33,4 +33,6 @@
     <string name="tv_food_price">Rp. 28.000</string>
     <string name="subtitle_order">Seems like you have not\nordered any food yet</string>
     <string name="tv_ouch_hungry">Ouch! Hungry</string>
+    <string name="user_gmail">User Gmail</string>
+    <string name="username">Username</string>
 </resources>
