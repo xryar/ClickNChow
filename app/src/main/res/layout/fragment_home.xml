@@ -62,8 +62,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        style="@style/Base.Theme.ClickNChow.AppBarOverlay"
-        android:layout_marginTop="24dp">
+        style="@style/Base.Theme.ClickNChow.AppBarOverlay">
         
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"

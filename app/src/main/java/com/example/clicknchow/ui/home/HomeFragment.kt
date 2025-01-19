@@ -15,9 +15,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     private var foodList: ArrayList<HomeModel> = ArrayList()
@@ -27,7 +24,6 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -38,6 +34,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initDataDummy()
+        showViewPager()
+        showHorizontalFood()
+    }
+
+    private fun showHorizontalFood() {
         val adapter = HomeAdapter(foodList)
         val layoutManager: LayoutManager = LinearLayoutManager(
             context,
@@ -46,7 +47,9 @@ class HomeFragment : Fragment() {
         )
         binding.rvFoodHorizontal.layoutManager = layoutManager
         binding.rvFoodHorizontal.adapter = adapter
+    }
 
+    private fun showViewPager() {
         val sectionPagerAdapter = SectionPagerAdapter(this)
         binding.viewPager.adapter = sectionPagerAdapter
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
