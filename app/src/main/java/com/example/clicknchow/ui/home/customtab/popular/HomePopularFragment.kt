@@ -21,7 +21,7 @@ class HomePopularFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeNewTasteBinding.inflate(inflater, container, false)
         val view = binding.root
 

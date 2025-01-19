@@ -25,9 +25,9 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val view = binding.root
 
-        return root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

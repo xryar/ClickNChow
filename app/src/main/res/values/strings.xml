@@ -22,7 +22,7 @@
     <string name="btn_register_now">Sign Up Now</string>
     <string name="subtitle_success">Now you are able to order\nsome foods as a self-reward</string>
     <string name="title_success">Yeay! Completed</string>
-    <string name="btn_success">Find Foods</string>
+    <string name="find_foods">Find Foods</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_order">Order</string>
@@ -31,4 +31,6 @@
     <string name="subtitle_home">Let\'s get some foods</string>
     <string name="food_name">Food Name</string>
     <string name="tv_food_price">Rp. 28.000</string>
+    <string name="subtitle_order">Seems like you have not\nordered any food yet</string>
+    <string name="tv_ouch_hungry">Ouch! Hungry</string>
 </resources>

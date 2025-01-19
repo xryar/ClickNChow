@@ -15,7 +15,7 @@ class SignUpSuccessFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentSignUpSuccessBinding.inflate(layoutInflater, container, false)
         val view = binding.root
