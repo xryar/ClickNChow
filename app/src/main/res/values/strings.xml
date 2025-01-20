@@ -47,4 +47,8 @@
     <string name="details_transaction">Details Transaction</string>
     <string name="driver">Driver</string>
     <string name="tax">Tax 10%</string>
+    <string name="user_phone_number">0822 0819 9688</string>
+    <string name="user_address">Setra Duta Palima</string>
+    <string name="user_house_number">A5 Hook</string>
+    <string name="user_city">Jakarta</string>
 </resources>

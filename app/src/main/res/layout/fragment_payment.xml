@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint"
+            android:id="@+id/payment_top_section"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/shape_rectangle_8_fff"
@@ -162,6 +162,144 @@
                 app:layout_constraintBottom_toBottomOf="@id/tv_total_price"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/payment_bot_section"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_rectangle_8_fff"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/payment_top_section">
+
+            <TextView
+                android:id="@+id/tv_deliver_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/details_transaction"
+                style="@style/TextView.PoppinsNormal14sp020202"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                style="@style/TextView.PoppinsNormal14sp8D92A3"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_deliver_to"/>
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username"
+                style="@style/TextView.PoppinsNormal14sp020202"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_name"/>
+
+            <TextView
+                android:id="@+id/tv_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_phone_number"
+                style="@style/TextView.PoppinsNormal14sp8D92A3"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"/>
+
+            <TextView
+                android:id="@+id/tv_user_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_phone_number"
+                style="@style/TextView.PoppinsNormal14sp020202"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_phone_number"
+                app:layout_constraintBottom_toBottomOf="@id/tv_phone_number"/>
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_address"
+                style="@style/TextView.PoppinsNormal14sp8D92A3"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_phone_number"/>
+
+            <TextView
+                android:id="@+id/tv_user_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_address"
+                style="@style/TextView.PoppinsNormal14sp020202"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_address"
+                app:layout_constraintBottom_toBottomOf="@id/tv_address"/>
+
+            <TextView
+                android:id="@+id/tv_house_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_house_number"
+                style="@style/TextView.PoppinsNormal14sp8D92A3"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_address"/>
+
+            <TextView
+                android:id="@+id/tv_user_house_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_house_number"
+                style="@style/TextView.PoppinsNormal14sp020202"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_house_number"
+                app:layout_constraintBottom_toBottomOf="@id/tv_house_number"/>
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_city"
+                style="@style/TextView.PoppinsNormal14sp8D92A3"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_house_number"/>
+
+            <TextView
+                android:id="@+id/tv_user_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_city"
+                style="@style/TextView.PoppinsNormal14sp020202"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_city"
+                app:layout_constraintBottom_toBottomOf="@id/tv_city"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_checkout_now"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Checkout Now"
+            android:textAllCaps="false"
+            style="@style/Button.Primary"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/payment_bot_section"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
