@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.example.clicknchow.R
 import com.example.clicknchow.databinding.FragmentPaymentBinding
 
 class PaymentFragment : Fragment() {
@@ -20,6 +22,16 @@ class PaymentFragment : Fragment() {
         val view = binding.root
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        (activity as DetailActivity).toolbarPayment()
+
+        binding.btnCheckoutNow.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_success)
+        }
     }
 
     override fun onDestroy() {
