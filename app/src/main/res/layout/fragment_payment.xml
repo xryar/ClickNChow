@@ -1,13 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.detail.PaymentFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_rectangle_8_fff"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_item_ordered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Item Ordered"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            
+            <ImageView
+                android:id="@+id/iv_food_ordered"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/iv_sample_product"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_item_ordered"/>
+
+            <TextView
+                android:id="@+id/tv_food_name_ordered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/food_name"
+                style="@style/TextView.PoppinsNormal16sp020202"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@id/iv_food_ordered"
+                app:layout_constraintTop_toTopOf="@id/iv_food_ordered"/>
+
+            <TextView
+                android:id="@+id/tv_food_price_ordered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/food_name"
+                style="@style/TextView.PoppinsNormal13sp8D92A3"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/iv_food_ordered"
+                app:layout_constraintTop_toBottomOf="@id/tv_food_name_ordered"/>
+
+            <TextView
+                android:id="@+id/tv_food_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14 items"
+                style="@style/TextView.PoppinsNormal13sp8D92A3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_food_ordered"
+                app:layout_constraintBottom_toBottomOf="@id/iv_food_ordered"/>
+
+            <TextView
+                android:id="@+id/tv_detail_transaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Details Transaction"
+                style="@style/TextView.PoppinsNormal14sp020202"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_food_ordered"/>
+
+            <TextView
+                android:id="@+id/tv_food_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/food_name"
+                style="@style/TextView.PoppinsNormal14sp8D92A3"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_transaction"/>
+
+            <TextView
+                android:id="@+id/tv_food_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_food_price"
+                style="@style/TextView.PoppinsNormal14sp020202"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_food_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_food_name"/>
+
+            <TextView
+                android:id="@+id/tv_driver_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Driver"
+                style="@style/TextView.PoppinsNormal14sp8D92A3"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_food_name"/>
+
+            <TextView
+                android:id="@+id/tv_driver_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_food_price"
+                style="@style/TextView.PoppinsNormal14sp020202"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_driver_fee"
+                app:layout_constraintBottom_toBottomOf="@id/tv_driver_fee"/>
+
+            <TextView
+                android:id="@+id/tv_food_tax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tax 10%"
+                style="@style/TextView.PoppinsNormal14sp8D92A3"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_driver_fee"/>
+
+            <TextView
+                android:id="@+id/tv_tax_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_food_price"
+                style="@style/TextView.PoppinsNormal14sp020202"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_food_tax"
+                app:layout_constraintBottom_toBottomOf="@id/tv_food_tax"/>
+
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_total_price_title"
+                style="@style/TextView.PoppinsNormal14sp8D92A3"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_food_tax"/>
+
+            <TextView
+                android:id="@+id/tv_all_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_food_price"
+                style="@style/TextView.PoppinsNormal14sp1ABC9C"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_total_price"
+                app:layout_constraintBottom_toBottomOf="@id/tv_total_price"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
