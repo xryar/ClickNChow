@@ -36,4 +36,10 @@
     <string name="user_gmail">User Gmail</string>
     <string name="username">Username</string>
     <string name="menu_profile">Menu Profile</string>
+    <string name="detail_description">Makanan khas Bandung yang cukup sering dipesan\noleh anak muda dengan pola makan yang cukup tinggi\ndengan mengutamakan diet yang sehat dan teratur.</string>
+    <string name="tv_ingredients_title">Ingredients:</string>
+    <string name="ingredients">bawang, cabe, wortel</string>
+    <string name="tv_total_price_title">Total Price:</string>
+    <string name="total_price">IDR 29.000</string>
+    <string name="order_now">Order Now</string>
 </resources>

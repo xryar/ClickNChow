@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.detail.DetailFragment">
+
+    <ImageView
+        android:id="@+id/iv_food_detail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_sample_product2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_arrow_back_000"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rectangle_20_fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        
+        <TextView
+            android:id="@+id/tv_food_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/food_name"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="26dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        
+        <RatingBar
+            android:id="@+id/rb_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/RatingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="16dp"
+            android:rating="4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_food_name"/>
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_description"
+            style="@style/TextView.PoppinsNormal14sp8D92A3"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rb_food"/>
+
+        <TextView
+            android:id="@+id/tv_ingredient_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_ingredients_title"
+            style="@style/TextView.PoppinsNormal14sp020202"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_description"/>
+
+        <TextView
+            android:id="@+id/tv_ingredient"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/ingredients"
+            style="@style/TextView.PoppinsNormal14sp8D92A3"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ingredient_title"/>
+
+        <TextView
+            android:id="@+id/tv_total_price_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_total_price_title"
+            style="@style/TextView.PoppinsNormal14sp8D92A3"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_order_now"/>
+
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_price"
+            style="@style/TextView.PoppinsNormal18sp020202"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_total_price_title"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_order_now"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/order_now"
+            style="@style/Button.Primary"
+            android:textAllCaps="false"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="41dp"
+            android:layout_marginBottom="27dp"
+            app:layout_constraintStart_toEndOf="@id/tv_total_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ingredient"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
