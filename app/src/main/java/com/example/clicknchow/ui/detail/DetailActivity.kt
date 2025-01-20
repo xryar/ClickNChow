@@ -1,10 +1,7 @@
 package com.example.clicknchow.ui.detail
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
 import com.example.clicknchow.R
 import com.example.clicknchow.databinding.ActivityDetailBinding
