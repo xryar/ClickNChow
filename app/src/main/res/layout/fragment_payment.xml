@@ -25,7 +25,7 @@
                 android:id="@+id/tv_item_ordered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Item Ordered"
+                android:text="@string/item_ordered"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
             
@@ -37,7 +37,8 @@
                 android:scaleType="centerCrop"
                 android:layout_marginTop="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_item_ordered"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_item_ordered"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tv_food_name_ordered"
@@ -64,7 +65,7 @@
                 android:id="@+id/tv_food_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="14 items"
+                android:text="@string/_14_items"
                 style="@style/TextView.PoppinsNormal13sp8D92A3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/iv_food_ordered"
@@ -74,7 +75,7 @@
                 android:id="@+id/tv_detail_transaction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Details Transaction"
+                android:text="@string/details_transaction"
                 style="@style/TextView.PoppinsNormal14sp020202"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +105,7 @@
                 android:id="@+id/tv_driver_fee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Driver"
+                android:text="@string/driver"
                 style="@style/TextView.PoppinsNormal14sp8D92A3"
                 android:layout_marginTop="6dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +125,7 @@
                 android:id="@+id/tv_food_tax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tax 10%"
+                android:text="@string/tax"
                 style="@style/TextView.PoppinsNormal14sp8D92A3"
                 android:layout_marginTop="6dp"
                 app:layout_constraintStart_toStartOf="parent"

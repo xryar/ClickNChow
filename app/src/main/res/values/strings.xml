@@ -42,4 +42,9 @@
     <string name="tv_total_price_title">Total Price:</string>
     <string name="total_price">IDR 29.000</string>
     <string name="order_now">Order Now</string>
+    <string name="item_ordered">Item Ordered</string>
+    <string name="_14_items">14 items</string>
+    <string name="details_transaction">Details Transaction</string>
+    <string name="driver">Driver</string>
+    <string name="tax">Tax 10%</string>
 </resources>
