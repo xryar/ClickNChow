@@ -51,4 +51,6 @@
     <string name="user_address">Setra Duta Palima</string>
     <string name="user_house_number">A5 Hook</string>
     <string name="user_city">Jakarta</string>
+    <string name="name">Name</string>
+    <string name="checkout_now">Checkout Now</string>
 </resources>
