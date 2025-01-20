@@ -53,4 +53,8 @@
     <string name="user_city">Jakarta</string>
     <string name="name">Name</string>
     <string name="checkout_now">Checkout Now</string>
+    <string name="title_success_order">You\'ve Made Order</string>
+    <string name="subtitle_success_order">Just stay at home while we are\npreparing your best foods</string>
+    <string name="order_other_foods">Order Other Foods</string>
+    <string name="view_my_order">View My Order</string>
 </resources>

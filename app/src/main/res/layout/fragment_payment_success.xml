@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.detail.PaymentSuccessFragment">
+    
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="200dp"
+        android:layout_height="201dp"
+        android:src="@drawable/ic_success_order"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_success_order"
+        style="@style/TextView.PoppinsNormal20sp020202"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtitle_success_order"
+        style="@style/TextView.PoppinsNormal14sp8D92A3"
+        android:gravity="center"
+        android:layout_marginTop="6dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_order_other"
+        android:layout_width="200dp"
+        android:text="@string/order_other_foods"
+        android:textAllCaps="false"
+        style="@style/Button.Primary"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_view_order"
+        android:layout_width="200dp"
+        android:text="@string/view_my_order"
+        android:textAllCaps="false"
+        style="@style/Button.Secondary"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>
