@@ -1,5 +1,6 @@
 package com.example.clicknchow.network
 
+import com.example.clicknchow.BuildConfig
 import com.example.clicknchow.utils.Helpers
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -50,7 +51,7 @@ class HttpClient {
         client = Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .client(okHttpClient)
-            .addConverter(GsonConverterFactory.create(Helpers.getDefaultGson()))
+            .addConverterFactory(GsonConverterFactory.create(Helpers.getDefaultGson()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
         endPoint = null
