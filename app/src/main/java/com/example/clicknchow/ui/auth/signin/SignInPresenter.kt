@@ -7,7 +7,7 @@ class SignInPresenter(private val view: SignContract.View): SignContract.Present
     private val mCompositeDisposable: CompositeDisposable = CompositeDisposable()
 
     override fun submitLogin(email: String, password: String) {
-        TODO("Not yet implemented")
+
     }
 
     override fun subscribe() {
