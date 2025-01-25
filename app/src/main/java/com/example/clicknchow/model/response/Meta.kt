@@ -9,7 +9,7 @@ data class Meta(
     val code: Int,
     @Expose
     @SerializedName("message")
-    val message: List<String>,
+    val message: String,
     @Expose
     @SerializedName("status")
     val status: String
