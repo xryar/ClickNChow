@@ -43,7 +43,9 @@ class HttpClient {
             builder.addInterceptor(interceptor)
         }
 
-        builder.addInterceptor(getInterceptorWithHeader("Authorization", "Bearer $token"))
+        if (token != null) {
+            builder.addInterceptor(getInterceptorWithHeader("Authorization", "Bearer $token"))
+        }
 
         val okHttpClient = builder.build()
         client = Retrofit.Builder()
