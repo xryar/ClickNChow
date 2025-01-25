@@ -34,8 +34,9 @@ class HttpClient {
 
     private fun buildRetrofitClient(token: String) {
         val builder = OkHttpClient.Builder()
-            builder.connectTimeout(2, TimeUnit.MINUTES)
-            builder.readTimeout(2, TimeUnit.MINUTES)
+            builder.connectTimeout(10, TimeUnit.SECONDS)
+            builder.readTimeout(10, TimeUnit.SECONDS)
+            builder.writeTimeout(10, TimeUnit.SECONDS)
 
         if (BuildConfig.DEBUG) {
             val interceptor = HttpLoggingInterceptor()

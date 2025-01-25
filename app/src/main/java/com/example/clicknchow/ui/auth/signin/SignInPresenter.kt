@@ -13,13 +13,17 @@ class SignInPresenter(private val view: SignContract.View): SignContract.Present
         val disposable = HttpClient.getInstance().getApi()!!.login(email, password)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe {
+            .subscribe ({
                 if (it.meta?.status.equals("success", true)) {
                     it.data?.let { it1 -> view.onLoginSuccess(it1) }
                 } else {
                     it.meta?.let { it1 -> view.onLoginFailed(it1.message.toString()) }
                 }
-            }
+            }, { throwable ->
+                // Tangani error di sini
+                throwable.printStackTrace()
+                view.onLoginFailed("Login failed: ${throwable.message}")
+            })
         mCompositeDisposable.add(disposable)
     }
 
