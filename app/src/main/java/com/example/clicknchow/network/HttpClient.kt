@@ -32,7 +32,7 @@ class HttpClient {
         buildRetrofitClient(token)
     }
 
-    fun buildRetrofitClient(token: String) {
+    private fun buildRetrofitClient(token: String) {
         val builder = OkHttpClient.Builder()
             builder.connectTimeout(2, TimeUnit.MINUTES)
             builder.readTimeout(2, TimeUnit.MINUTES)
