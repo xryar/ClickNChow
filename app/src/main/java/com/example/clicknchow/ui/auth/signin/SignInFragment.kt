@@ -1,5 +1,6 @@
 package com.example.clicknchow.ui.auth.signin
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,16 +8,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.clicknchow.R
 import com.example.clicknchow.databinding.FragmentSignInBinding
 import com.example.clicknchow.model.response.login.LoginResponse
 import com.example.clicknchow.ui.MainActivity
 import com.example.clicknchow.ui.auth.AuthActivity
 
-class SignInFragment : Fragment(), SignContract.View {
+class SignInFragment : Fragment(), SignInContract.View {
 
     private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
     private lateinit var presenter: SignInPresenter
+    var progressDialog: Dialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,10 +35,12 @@ class SignInFragment : Fragment(), SignContract.View {
         super.onViewCreated(view, savedInstanceState)
         presenter = SignInPresenter(this)
 
+        initView()
+
         binding.btnLogin.setOnClickListener {
-//            val email = binding.edEmail.text.toString()
-//            val password = binding.edPassword.text.toString()
-            presenter.submitLogin("rusdi12322@hotbarber.com", "12345678")
+            val email = binding.edEmail.text.toString()
+            val password = binding.edPassword.text.toString()
+            presenter.submitLogin(email, password)
         }
 
         binding.btnRegister.setOnClickListener {
@@ -43,11 +48,6 @@ class SignInFragment : Fragment(), SignContract.View {
             register.putExtra("pageRequest", 2)
             startActivity(register)
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 
     override fun onLoginSuccess(loginResponse: LoginResponse) {
@@ -60,11 +60,27 @@ class SignInFragment : Fragment(), SignContract.View {
         Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
 
-    override fun showLoading() {
+    private fun initView() {
+        progressDialog = Dialog(requireContext())
+        val dialogLayout = layoutInflater.inflate(R.layout.dialog_loader, null)
 
+        progressDialog?.let {
+            it.setContentView(dialogLayout)
+            it.setCancelable(false)
+            it.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        }
+    }
+
+    override fun showLoading() {
+        progressDialog?.show()
     }
 
     override fun dismissLoading() {
+        progressDialog?.dismiss()
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }
