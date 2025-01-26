@@ -36,16 +36,21 @@ class SignInFragment : Fragment(), SignInContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter = SignInPresenter(this)
+        checkToken()
+        initView()
+        initDummy()
+        actionButton()
+    }
 
+    private fun checkToken() {
         if (!ClickNChow.getApp().getToken().isNullOrEmpty()) {
             val home = Intent(activity, MainActivity::class.java)
             startActivity(home)
             activity?.finish()
         }
+    }
 
-        initView()
-        initDummy()
-
+    private fun actionButton() {
         binding.btnLogin.setOnClickListener {
             val email = binding.edEmail.text.toString()
             val password = binding.edPassword.text.toString()

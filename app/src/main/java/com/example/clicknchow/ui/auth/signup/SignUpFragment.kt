@@ -28,11 +28,26 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initDummy()
+        initListener()
+
         binding.btnContinue.setOnClickListener {
             Navigation.findNavController(it)
                 .navigate(R.id.action_sign_up_address, null)
             (activity as AuthActivity).toolbarSignUpAddress()
         }
+    }
+
+    private fun initListener() {
+        binding.ivUser.setOnClickListener {
+
+        }
+    }
+
+    private fun initDummy() {
+        binding.edName.setText("Fajar Pedas")
+        binding.edEmail.setText("fajarpedas123@gmail.com")
+        binding.edPassword.setText("12345678")
     }
 
     override fun onDestroy() {
