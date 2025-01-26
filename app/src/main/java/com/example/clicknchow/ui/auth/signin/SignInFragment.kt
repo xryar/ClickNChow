@@ -83,8 +83,8 @@ class SignInFragment : Fragment(), SignInContract.View {
     }
 
     private fun initDummy() {
-        binding.edEmail.setText("rusdi12322@hotbarber.com")
-        binding.edPassword.setText("12345678")
+        binding.edEmail.setText(getString(R.string.dummy_email))
+        binding.edPassword.setText(getString(R.string.dummy_password))
     }
 
     private fun initView() {
