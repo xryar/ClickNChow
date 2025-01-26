@@ -41,10 +41,6 @@ class SignInFragment : Fragment(), SignInContract.View {
             val home = Intent(activity, MainActivity::class.java)
             startActivity(home)
             activity?.finish()
-        } else if (ClickNChow.getApp().getToken().isNullOrEmpty()) {
-            val auth = Intent(activity, AuthActivity::class.java)
-            startActivity(auth)
-            activity?.finish()
         }
 
         initView()
