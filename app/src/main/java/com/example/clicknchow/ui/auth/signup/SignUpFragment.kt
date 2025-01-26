@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.clicknchow.R
 import com.example.clicknchow.databinding.FragmentSignUpBinding
+import com.example.clicknchow.model.request.RegisterRequest
 import com.example.clicknchow.ui.auth.AuthActivity
 import com.github.dhaval2404.imagepicker.ImagePicker
 
@@ -61,11 +62,7 @@ class SignUpFragment : Fragment() {
         initDummy()
         initListener()
 
-        binding.btnContinue.setOnClickListener {
-            Navigation.findNavController(it)
-                .navigate(R.id.action_sign_up_address, null)
-            (activity as AuthActivity).toolbarSignUpAddress()
-        }
+
     }
 
     private fun initListener() {
@@ -75,6 +72,42 @@ class SignUpFragment : Fragment() {
                 .createIntent { intent ->
                     imagePickerLauncher.launch(intent)
                 }
+        }
+
+        binding.btnContinue.setOnClickListener {
+            val name = binding.edName.text.toString()
+            val email = binding.edEmail.text.toString()
+            val password = binding.edPassword.text.toString()
+
+            if (name.isEmpty()) {
+                binding.edName.error = "Silahkan masukkan Nama anda"
+                binding.edName.requestFocus()
+            } else if (email.isEmpty()) {
+                binding.edEmail.error = "Silahkan masukkan Email anda"
+                binding.edEmail.requestFocus()
+            } else if (password.isEmpty()) {
+                binding.edPassword.error = "Silahkan masukkan Password anda"
+                binding.edPassword.requestFocus()
+            } else {
+                val data = RegisterRequest(
+                    name,
+                    email,
+                    password,
+                    password,
+                    "",
+                    "",
+                    "",
+                    "",
+                    filePath
+                )
+
+                val bundle = Bundle()
+                bundle.putParcelable("data", data)
+
+                Navigation.findNavController(it)
+                    .navigate(R.id.action_sign_up_address, bundle)
+                (activity as AuthActivity).toolbarSignUpAddress()
+            }
         }
     }
 
