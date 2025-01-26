@@ -38,9 +38,9 @@ class SignInFragment : Fragment(), SignInContract.View {
         initView()
 
         binding.btnLogin.setOnClickListener {
-            val email = binding.edEmail.text.toString()
-            val password = binding.edPassword.text.toString()
-            presenter.submitLogin(email, password)
+//            val email = binding.edEmail.text.toString()
+//            val password = binding.edPassword.text.toString()
+            presenter.submitLogin("rusdi12322@hotbarber.com", "12345678")
         }
 
         binding.btnRegister.setOnClickListener {
