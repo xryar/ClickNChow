@@ -19,7 +19,7 @@ class SignInFragment : Fragment(), SignInContract.View {
     private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
     private lateinit var presenter: SignInPresenter
-    var progressDialog: Dialog? = null
+    private var progressDialog: Dialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,7 +62,7 @@ class SignInFragment : Fragment(), SignInContract.View {
 
     private fun initView() {
         progressDialog = Dialog(requireContext())
-        val dialogLayout = layoutInflater.inflate(R.layout.dialog_loader, null)
+        val dialogLayout = layoutInflater.inflate(R.layout.dialog_loader, binding.root, false)
 
         progressDialog?.let {
             it.setContentView(dialogLayout)
