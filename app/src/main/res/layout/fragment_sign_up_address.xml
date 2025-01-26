@@ -83,7 +83,7 @@
             android:text="@string/tv_city"/>
 
         <EditText
-            android:id="@+id/ed_password"
+            android:id="@+id/ed_city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
