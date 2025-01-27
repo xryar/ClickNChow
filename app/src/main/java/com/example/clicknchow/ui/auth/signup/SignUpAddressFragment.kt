@@ -22,7 +22,7 @@ class SignUpAddressFragment : Fragment(), SignUpContract.View {
     private val binding get() = _binding!!
     private lateinit var data: RegisterRequest
     private lateinit var presenter: SignUpPresenter
-    var progressDialog: Dialog? = null
+    private var progressDialog: Dialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +36,8 @@ class SignUpAddressFragment : Fragment(), SignUpContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter = SignUpPresenter(this)
-        data = arguments?.getParcelable<RegisterRequest>("data")!!
+        val args = SignUpAddressFragmentArgs.fromBundle(requireArguments())
+        data = args.data
         initDummy()
         initListener()
         initView()

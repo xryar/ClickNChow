@@ -102,11 +102,8 @@ class SignUpFragment : Fragment() {
                     filePath
                 )
 
-                val bundle = Bundle()
-                bundle.putParcelable("data", data)
-
-                Navigation.findNavController(it)
-                    .navigate(R.id.action_sign_up_address, bundle)
+                val action = SignUpFragmentDirections.actionSignUpAddress(data)
+                Navigation.findNavController(it).navigate(action)
                 (activity as AuthActivity).toolbarSignUpAddress()
             }
         }

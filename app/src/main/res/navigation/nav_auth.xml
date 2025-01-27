@@ -32,6 +32,10 @@
         android:name="com.example.clicknchow.ui.auth.signup.SignUpAddressFragment"
         tools:layout="@layout/fragment_sign_up_address">
 
+        <argument
+            android:name="data"
+            app:argType="com.example.clicknchow.model.request.RegisterRequest" />
+
         <action
             android:id="@+id/action_sign_up_success"
             app:destination="@id/fragmentSignUpSuccess"/>
