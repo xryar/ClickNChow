@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.clicknchow.R
 import com.example.clicknchow.databinding.FragmentSignUpBinding
 import com.example.clicknchow.model.request.RegisterRequest
 import com.example.clicknchow.ui.auth.AuthActivity
