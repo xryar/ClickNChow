@@ -1,6 +1,9 @@
 package com.example.clicknchow.network
 
+import android.util.Log
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.clicknchow.BuildConfig
+import com.example.clicknchow.ClickNChow
 import com.example.clicknchow.utils.Helpers
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -28,11 +31,11 @@ class HttpClient {
     }
 
     private fun buildRetrofitClient() {
-        val token = ""
+        val token = ClickNChow.getApp().getToken()
         buildRetrofitClient(token)
     }
 
-    fun buildRetrofitClient(token: String) {
+    fun buildRetrofitClient(token: String?) {
         val builder = OkHttpClient.Builder()
             builder.connectTimeout(10, TimeUnit.SECONDS)
             builder.readTimeout(10, TimeUnit.SECONDS)
@@ -42,6 +45,7 @@ class HttpClient {
             val interceptor = HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.BODY
             builder.addInterceptor(interceptor)
+            builder.addInterceptor(ChuckerInterceptor(ClickNChow.getApp()))
         }
 
         if (token != null) {
@@ -56,6 +60,8 @@ class HttpClient {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
         endPoint = null
+
+        Log.v("Header", "Token : $token")
     }
 
     private fun getInterceptorWithHeader(headerName: String, headerValue: String): Interceptor {

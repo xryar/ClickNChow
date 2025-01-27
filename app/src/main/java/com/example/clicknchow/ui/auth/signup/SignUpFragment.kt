@@ -69,6 +69,7 @@ class SignUpFragment : Fragment() {
         binding.ivUser.setOnClickListener {
             ImagePicker.with(this)
                 .cameraOnly()
+                .compress(1024)
                 .createIntent { intent ->
                     imagePickerLauncher.launch(intent)
                 }
