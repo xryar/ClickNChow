@@ -2,6 +2,7 @@ package com.example.clicknchow.ui.home
 
 import android.app.Dialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ import com.example.clicknchow.model.response.home.HomeResponse
 import com.example.clicknchow.model.response.login.User
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.gson.Gson
+import com.squareup.picasso.Picasso
 
 class HomeFragment : Fragment(), HomeContract.View {
 
@@ -111,10 +113,12 @@ class HomeFragment : Fragment(), HomeContract.View {
             it.window?.setBackgroundDrawableResource(android.R.color.transparent)
         }
 
-        var user = Gson().fromJson(ClickNChow.getApp().getUser(), User::class.java)
-        if (!user.profile_photo_url.isNullOrEmpty()) {
-            Glide.with(requireActivity())
-                .load(user.profile_photo_url)
+        val user = ClickNChow.getApp().getUser()
+        val userResponse = Gson().fromJson(user, User::class.java)
+        if (userResponse.profile_photo_url.isNotEmpty()) {
+            Log.d("ProfileImage", "URL: ${userResponse.profile_photo_url}")
+            Glide.with(requireContext())
+                .load(userResponse.profile_photo_url)
                 .into(binding.ivUser)
         }
     }
