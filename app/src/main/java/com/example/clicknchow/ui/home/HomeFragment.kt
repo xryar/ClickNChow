@@ -9,11 +9,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import com.example.clicknchow.BuildConfig
 import com.example.clicknchow.R
 import com.example.clicknchow.databinding.FragmentHomeBinding
-import com.example.clicknchow.model.dummy.HomeModel
-import com.example.clicknchow.model.response.home.Data
 import com.example.clicknchow.model.response.home.HomeResponse
 import com.google.android.material.tabs.TabLayoutMediator
 
