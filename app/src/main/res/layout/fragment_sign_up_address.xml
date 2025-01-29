@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginTop="6dp"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:background="@drawable/shape_rectangle_outline_8_020202"
             style="@style/EditText.PoppinsNormal14sp8D92A3"
             android:hint="@string/ed_city"

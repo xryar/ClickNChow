@@ -7,10 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.clicknchow.databinding.ItemFoodVerticalBinding
 import com.example.clicknchow.model.dummy.HomeVerticalModel
+import com.example.clicknchow.model.response.home.Data
 import com.example.clicknchow.ui.detail.DetailActivity
 import com.example.clicknchow.utils.Helpers.formatPrice
 
-class HomeNewTasteAdapter(private val listData: List<HomeVerticalModel>) :
+class HomeNewTasteAdapter(private val listData: List<Data>) :
     RecyclerView.Adapter<HomeNewTasteAdapter.ViewHolder>() {
 
     class ViewHolder(var binding: ItemFoodVerticalBinding) : RecyclerView.ViewHolder(binding.root)
@@ -26,11 +27,11 @@ class HomeNewTasteAdapter(private val listData: List<HomeVerticalModel>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = listData[position]
-        holder.binding.tvFoodTitle.text = data.title
-        holder.binding.tvFoodPrice.formatPrice(data.price)
-        holder.binding.rbFood.rating = data.rating
+        holder.binding.tvFoodTitle.text = data.name
+        holder.binding.tvFoodPrice.formatPrice(data.price.toString())
+        holder.binding.rbFood.rating = data.rate.toFloat()
         Glide.with(holder.itemView.context)
-            .load(data.src)
+            .load(data.picturePath)
             .into(holder.binding.ivFood)
         holder.itemView.setOnClickListener {
             val detail = Intent(it.context, DetailActivity::class.java)

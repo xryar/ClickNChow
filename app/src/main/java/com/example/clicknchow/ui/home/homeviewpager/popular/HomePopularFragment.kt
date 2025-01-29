@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.clicknchow.databinding.FragmentHomeNewTasteBinding
 import com.example.clicknchow.model.dummy.HomeVerticalModel
+import com.example.clicknchow.model.response.home.Data
 import com.example.clicknchow.ui.home.homeviewpager.newtaste.HomeNewTasteAdapter
 
 class HomePopularFragment : Fragment() {
 
     private var _binding: FragmentHomeNewTasteBinding? = null
     private val binding get() = _binding!!
-
-    private var foodList: ArrayList<HomeVerticalModel> = ArrayList()
+    private var popularList: ArrayList<Data>? = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,22 +31,15 @@ class HomePopularFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initDataDummy()
+        popularList = arguments?.getParcelableArrayList("data")
         showVerticalFood()
     }
 
     private fun showVerticalFood() {
-        val adapter = HomeNewTasteAdapter(foodList)
+        val adapter = HomeNewTasteAdapter(popularList!!)
         val layoutManager: LayoutManager = LinearLayoutManager(activity)
         binding.rvListFood.layoutManager = layoutManager
         binding.rvListFood.adapter = adapter
-    }
-
-    private fun initDataDummy() {
-        foodList = ArrayList()
-        foodList.add(HomeVerticalModel("Cherry Healthy", "10000", "",5f))
-        foodList.add(HomeVerticalModel("Burger Tamayo", "25000", "",4f))
-        foodList.add(HomeVerticalModel("Bwang Puttie", "5000","", 4.5f))
     }
 
     override fun onDestroy() {

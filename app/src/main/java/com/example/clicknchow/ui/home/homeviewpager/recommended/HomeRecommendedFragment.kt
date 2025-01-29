@@ -9,14 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.clicknchow.databinding.FragmentHomeNewTasteBinding
 import com.example.clicknchow.model.dummy.HomeVerticalModel
+import com.example.clicknchow.model.response.home.Data
 import com.example.clicknchow.ui.home.homeviewpager.newtaste.HomeNewTasteAdapter
 
 class HomeRecommendedFragment : Fragment() {
 
     private var _binding: FragmentHomeNewTasteBinding? = null
     private val binding get() = _binding!!
-
-    private var foodList: ArrayList<HomeVerticalModel> = ArrayList()
+    private var recommendedList: ArrayList<Data>? = ArrayList()
+//    private var foodList: ArrayList<HomeVerticalModel> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,23 +32,24 @@ class HomeRecommendedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initDataDummy()
+//        initDataDummy()
+        recommendedList = arguments?.getParcelableArrayList("data")
         showVerticalFood()
     }
 
     private fun showVerticalFood() {
-        val adapter = HomeNewTasteAdapter(foodList)
+        val adapter = HomeNewTasteAdapter(recommendedList!!)
         val layoutManager: LayoutManager = LinearLayoutManager(activity)
         binding.rvListFood.layoutManager = layoutManager
         binding.rvListFood.adapter = adapter
     }
 
-    private fun initDataDummy() {
-        foodList = ArrayList()
-        foodList.add(HomeVerticalModel("Cherry Healthy", "10000", "",5f))
-        foodList.add(HomeVerticalModel("Burger Tamayo", "25000", "",4f))
-        foodList.add(HomeVerticalModel("Bwang Puttie", "5000","", 4.5f))
-    }
+//    private fun initDataDummy() {
+//        foodList = ArrayList()
+//        foodList.add(HomeVerticalModel("Cherry Healthy", "10000", "",5f))
+//        foodList.add(HomeVerticalModel("Burger Tamayo", "25000", "",4f))
+//        foodList.add(HomeVerticalModel("Bwang Puttie", "5000","", 4.5f))
+//    }
 
     override fun onDestroy() {
         super.onDestroy()

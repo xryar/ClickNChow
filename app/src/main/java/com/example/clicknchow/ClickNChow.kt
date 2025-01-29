@@ -35,7 +35,6 @@ class ClickNChow: MultiDexApplication() {
 
     fun setUser(user: String) {
         getPreference().edit().putString("PREFERENCES_USER", user).apply()
-        HttpClient.getInstance().buildRetrofitClient(user)
     }
 
     fun getUser(): String? {
