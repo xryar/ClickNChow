@@ -1,5 +1,6 @@
 package com.example.clicknchow.ui.home.homeviewpager.newtaste
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,7 +30,11 @@ class HomeNewTasteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        newTasteList = arguments?.getParcelableArrayList("data")
+        newTasteList = if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            arguments?.getParcelableArrayList("data")
+        } else {
+            arguments?.getParcelableArrayList("data", Data::class.java)
+        }
         showVerticalFood()
     }
 

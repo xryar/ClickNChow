@@ -118,6 +118,7 @@ class HomeFragment : Fragment(), HomeContract.View {
             Log.d("ProfileImage", "URL: ${userResponse.profile_photo_url}")
             Glide.with(requireContext())
                 .load(userResponse.profile_photo_url)
+                .circleCrop()
                 .into(binding.ivUser)
         }
     }

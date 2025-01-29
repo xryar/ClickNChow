@@ -1,5 +1,6 @@
 package com.example.clicknchow.ui.home.homeviewpager.recommended
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,6 @@ class HomeRecommendedFragment : Fragment() {
     private var _binding: FragmentHomeNewTasteBinding? = null
     private val binding get() = _binding!!
     private var recommendedList: ArrayList<Data>? = ArrayList()
-//    private var foodList: ArrayList<HomeVerticalModel> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,8 +31,12 @@ class HomeRecommendedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        initDataDummy()
-        recommendedList = arguments?.getParcelableArrayList("data")
+
+        recommendedList = if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            arguments?.getParcelableArrayList("data")
+        } else {
+            arguments?.getParcelableArrayList("data", Data::class.java)
+        }
         showVerticalFood()
     }
 
@@ -42,13 +46,6 @@ class HomeRecommendedFragment : Fragment() {
         binding.rvListFood.layoutManager = layoutManager
         binding.rvListFood.adapter = adapter
     }
-
-//    private fun initDataDummy() {
-//        foodList = ArrayList()
-//        foodList.add(HomeVerticalModel("Cherry Healthy", "10000", "",5f))
-//        foodList.add(HomeVerticalModel("Burger Tamayo", "25000", "",4f))
-//        foodList.add(HomeVerticalModel("Bwang Puttie", "5000","", 4.5f))
-//    }
 
     override fun onDestroy() {
         super.onDestroy()

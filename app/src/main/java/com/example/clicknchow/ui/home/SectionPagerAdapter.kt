@@ -19,7 +19,7 @@ class SectionPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(frag
     }
 
     override fun createFragment(position: Int): Fragment {
-        var fragment: Fragment? = null
+        val fragment: Fragment?
         when(position) {
             0 -> {
                 fragment = HomeNewTasteFragment()
@@ -54,7 +54,6 @@ class SectionPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(frag
         newTasteList = newTasteListParms
         popularList = popularListParms
         recommendedList = recommendedListParms
-        //notifyDataSetChanged()
     }
 
 }
