@@ -19,7 +19,6 @@ import com.example.clicknchow.model.response.home.HomeResponse
 import com.example.clicknchow.model.response.login.User
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.gson.Gson
-import com.squareup.picasso.Picasso
 
 class HomeFragment : Fragment(), HomeContract.View {
 
