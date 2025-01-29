@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.clicknchow.databinding.ItemFoodVerticalBinding
-import com.example.clicknchow.model.dummy.HomeVerticalModel
 import com.example.clicknchow.model.response.home.Data
 import com.example.clicknchow.ui.detail.DetailActivity
 import com.example.clicknchow.utils.Helpers.formatPrice

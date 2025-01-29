@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.clicknchow.databinding.FragmentHomeNewTasteBinding
-import com.example.clicknchow.model.dummy.HomeVerticalModel
 import com.example.clicknchow.model.response.home.Data
 import com.example.clicknchow.ui.home.homeviewpager.newtaste.HomeNewTasteAdapter
 
