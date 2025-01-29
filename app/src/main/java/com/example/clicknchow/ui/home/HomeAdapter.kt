@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.clicknchow.databinding.ItemFoodHorizontalBinding
-import com.example.clicknchow.model.dummy.HomeModel
+import com.example.clicknchow.model.response.home.Data
 import com.example.clicknchow.ui.detail.DetailActivity
 
-class HomeAdapter(private val listData: List<HomeModel>) :
+class HomeAdapter(private val listData: List<Data>) :
     RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     class ViewHolder(var binding: ItemFoodHorizontalBinding) : RecyclerView.ViewHolder(binding.root)
@@ -25,10 +25,10 @@ class HomeAdapter(private val listData: List<HomeModel>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = listData[position]
-        holder.binding.tvTitle.text = data.title
-        holder.binding.rbFood.rating = data.rating
+        holder.binding.tvTitle.text = data.name
+        holder.binding.rbFood.rating = data.rate.toFloat()
         Glide.with(holder.itemView.context)
-            .load(data.src)
+            .load(data.picturePath)
             .into(holder.binding.ivProduct)
         holder.itemView.setOnClickListener {
             holder.itemView.setOnClickListener {

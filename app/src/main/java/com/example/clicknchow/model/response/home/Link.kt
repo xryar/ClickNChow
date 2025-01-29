@@ -10,7 +10,7 @@ data class Link(
     val active: Boolean,
     @Expose
     @SerializedName("label")
-    val label: Int,
+    val label: String,
     @Expose
     @SerializedName("url")
     val url: String
