@@ -25,6 +25,14 @@ class PaymentSuccessFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as DetailActivity).toolbarDetail()
+
+        binding.btnOrderOther.setOnClickListener {
+            requireActivity().finish()
+        }
+
+        binding.btnOrderOther.setOnClickListener {
+            requireActivity().finish()
+        }
     }
 
     override fun onDestroy() {
