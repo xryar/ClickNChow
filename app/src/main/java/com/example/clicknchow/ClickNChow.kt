@@ -20,7 +20,7 @@ class ClickNChow: MultiDexApplication() {
         instance = this
     }
 
-    fun getPreference(): SharedPreferences {
+    private fun getPreference(): SharedPreferences {
         return PreferenceManager.getDefaultSharedPreferences(this)
     }
 

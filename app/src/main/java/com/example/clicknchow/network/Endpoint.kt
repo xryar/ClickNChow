@@ -1,6 +1,7 @@
 package com.example.clicknchow.network
 
 import com.example.clicknchow.model.response.Wrapper
+import com.example.clicknchow.model.response.checkout.CheckoutResponse
 import com.example.clicknchow.model.response.home.HomeResponse
 import com.example.clicknchow.model.response.login.LoginResponse
 import com.example.clicknchow.model.response.register.RegisterResponse
@@ -43,5 +44,15 @@ interface Endpoint {
 
     @GET("food")
     fun home(): Observable<Wrapper<HomeResponse>>
+
+    @FormUrlEncoded
+    @POST("checkout")
+    fun checkout(
+        @Field("food_id") foodId: String,
+        @Field("user_id") userId: String,
+        @Field("quantity") quantity: String,
+        @Field("total") total: String,
+        @Field("status") status: String,
+    ): Observable<Wrapper<CheckoutResponse>>
 
 }
