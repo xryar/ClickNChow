@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
@@ -38,11 +39,14 @@ class DetailFragment : Fragment() {
         initView(data)
 
         binding.btnOrderNow.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_payment)
+            Navigation.findNavController(it).navigate(R.id.action_payment, bundle)
         }
     }
 
     private fun initView(data: Data?) {
+
+        bundle = bundleOf("data" to data)
+
         Glide.with(requireContext())
             .load(data?.picturePath)
             .into(binding.ivFoodDetail)

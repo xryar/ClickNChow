@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class User(
     @Expose
-    @SerializedName("meta")
+    @SerializedName("address")
     val address: String,
     @Expose
     @SerializedName("city")
