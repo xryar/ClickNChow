@@ -46,6 +46,7 @@ class PaymentFragment : Fragment(), PaymentContract.View {
 
         val data = arguments?.getParcelable<Data>("data")
         initFoodView(data)
+        initProgressDialog()
     }
 
     private fun initFoodView(data: Data?) {
@@ -109,10 +110,6 @@ class PaymentFragment : Fragment(), PaymentContract.View {
             it.setCancelable(false)
             it.window?.setBackgroundDrawableResource(android.R.color.transparent)
         }
-    }
-
-    private fun initUserView() {
-
     }
 
     override fun onCheckoutSuccess(checkoutResponse: CheckoutResponse, view: View) {
