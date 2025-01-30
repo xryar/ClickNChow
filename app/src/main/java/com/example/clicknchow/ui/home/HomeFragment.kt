@@ -52,7 +52,7 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     override fun onHomeSuccess(homeResponse: HomeResponse) {
         for (a in homeResponse.data.indices) {
-            val items:List<String> = homeResponse.data[a].types.split(",")
+            val items:List<String> = homeResponse.data[a].types!!.split(",")
             for (x in items.indices) {
                 if(items[x].equals("new_food", true)) {
                     newStateList.add(homeResponse.data[a])
@@ -114,6 +114,7 @@ class HomeFragment : Fragment(), HomeContract.View {
 
         val user = ClickNChow.getApp().getUser()
         val userResponse = Gson().fromJson(user, User::class.java)
+        binding.tvGreeting.text = "Hi, ${userResponse.name}"
         if (userResponse.profile_photo_url.isNotEmpty()) {
             Log.d("ProfileImage", "URL: ${userResponse.profile_photo_url}")
             Glide.with(requireContext())

@@ -10,35 +10,35 @@ import kotlinx.parcelize.Parcelize
 data class Data(
     @Expose
     @SerializedName("created_at")
-    val createdAt: String,
+    val createdAt: String?,
     @Expose
     @SerializedName("deleted_at")
-    val deletedAt: String,
+    val deletedAt: String?,
     @Expose
     @SerializedName("description")
-    val description: String,
+    val description: String?,
     @Expose
     @SerializedName("id")
-    val id: Int,
+    val id: Int?,
     @Expose
     @SerializedName("ingredients")
-    val ingredients: String,
+    val ingredients: String?,
     @Expose
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @Expose
     @SerializedName("picturePath")
-    val picturePath: String,
+    val picturePath: String?,
     @Expose
     @SerializedName("price")
-    val price: Int,
+    val price: Int?,
     @Expose
     @SerializedName("rate")
-    val rate: Double,
+    val rate: Double?,
     @Expose
     @SerializedName("types")
-    val types: String,
+    val types: String?,
     @Expose
     @SerializedName("updated_at")
-    val updatedAt: String
+    val updatedAt: String?
 ): Parcelable

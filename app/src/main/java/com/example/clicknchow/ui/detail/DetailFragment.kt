@@ -6,13 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.bumptech.glide.Glide
 import com.example.clicknchow.R
 import com.example.clicknchow.databinding.FragmentDetailBinding
+import com.example.clicknchow.model.response.home.Data
+import com.example.clicknchow.utils.Helpers.formatPrice
 
 class DetailFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
+    private var data: Data? = null
+    private var bundle: Bundle? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,9 +34,24 @@ class DetailFragment : Fragment() {
 
         (activity as DetailActivity).toolbarDetail()
 
+        data = requireActivity().intent.getParcelableExtra("data")
+        initView(data)
+
         binding.btnOrderNow.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_payment)
         }
+    }
+
+    private fun initView(data: Data?) {
+        Glide.with(requireContext())
+            .load(data?.picturePath)
+            .into(binding.ivFoodDetail)
+
+        binding.tvFoodName.text = data?.name
+        binding.rbFood.rating = data?.rate?.toFloat() ?: 0f
+        binding.tvDescription.text = data?.description
+        binding.tvIngredient.text = data?.ingredients
+        binding.tvTotalPrice.formatPrice(data?.price.toString())
     }
 
     override fun onDestroy() {

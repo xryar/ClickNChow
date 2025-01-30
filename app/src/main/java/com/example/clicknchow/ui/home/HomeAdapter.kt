@@ -26,13 +26,13 @@ class HomeAdapter(private val listData: List<Data>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = listData[position]
         holder.binding.tvTitle.text = data.name
-        holder.binding.rbFood.rating = data.rate.toFloat()
+        holder.binding.rbFood.rating = data.rate?.toFloat() ?: 0f
         Glide.with(holder.itemView.context)
             .load(data.picturePath)
             .into(holder.binding.ivProduct)
         holder.itemView.setOnClickListener {
             holder.itemView.setOnClickListener {
-                val detail = Intent(it.context, DetailActivity::class.java)
+                val detail = Intent(it.context, DetailActivity::class.java).putExtra("data", data)
                 it.context.startActivity(detail)
             }
         }

@@ -1,6 +1,7 @@
 package com.example.clicknchow.ui.detail
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
@@ -17,10 +18,14 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_detail) as NavHostFragment
-        val navController = navHostFragment.navController
-        navController.navigateUp()
+        intent.extras?.let {
+            val navHostFragment = supportFragmentManager
+                .findFragmentById(R.id.nav_host_detail) as NavHostFragment
+            val navController = navHostFragment.navController
+            val bundle = Bundle()
+            bundle.putParcelable("data", it.get("data") as Parcelable?)
+            navController.setGraph(navController.graph, bundle)
+        }
     }
 
     fun toolbarPayment() {

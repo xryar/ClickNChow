@@ -62,15 +62,14 @@
 
         <TextView
             android:id="@+id/tv_description"
+            style="@style/TextView.PoppinsNormal14sp8D92A3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/detail_description"
-            style="@style/TextView.PoppinsNormal14sp8D92A3"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/detail_description"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rb_food"/>
+            app:layout_constraintTop_toBottomOf="@id/rb_food" />
 
         <TextView
             android:id="@+id/tv_ingredient_title"
