@@ -1,10 +1,8 @@
 package com.example.clicknchow.ui.detail
 
-import android.view.View
 import com.example.clicknchow.base.BasePresenter
 import com.example.clicknchow.base.BaseView
 import com.example.clicknchow.model.response.checkout.CheckoutResponse
-import com.example.clicknchow.model.response.home.HomeResponse
 
 interface PaymentContract {
 
