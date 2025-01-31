@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     android:layout_marginTop="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -10,46 +11,56 @@
         android:id="@+id/iv_food"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/iv_sample_product"
         android:layout_marginStart="16dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="ContentDescription" />
+        android:src="@drawable/iv_sample_product"/>
 
     <TextView
-        android:id="@+id/tv_food_title"
+        android:id="@+id/tv_food_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/food_name"
         style="@style/TextView.PoppinsNormal16sp020202"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="12dp"
         app:layout_constraintStart_toEndOf="@id/iv_food"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/iv_food"/>
 
     <TextView
         android:id="@+id/tv_food_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tv_food_price"
-        style="@style/TextView.PoppinsNormal14sp8D92A3"
+        android:text="@string/food_name"
+        style="@style/TextView.PoppinsNormal13sp8D92A3"
         android:layout_marginStart="12dp"
-        android:layout_marginBottom="8dp"
         app:layout_constraintStart_toEndOf="@id/iv_food"
-        app:layout_constraintTop_toBottomOf="@id/tv_food_title"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_food_name"/>
 
-    <RatingBar
-        android:id="@+id/rb_food"
+    <TextView
+        android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:theme="@style/RatingBar"
-        style="@style/Widget.AppCompat.RatingBar.Small"
+        tools:text="Jun 12, 14:00"
+        style="@style/TextView.PoppinsNormal10sp8D92A3"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView.PoppinsNormal10spD9435E"
+        tools:text="Cancelled"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="24dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_date"
+        tools:visibility="visible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
