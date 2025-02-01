@@ -1,15 +1,11 @@
 package com.example.clicknchow.ui.order.inprogress
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.clicknchow.databinding.ItemFoodHorizontalBinding
 import com.example.clicknchow.databinding.ItemProgressBinding
-import com.example.clicknchow.model.response.home.Data
-import com.example.clicknchow.ui.detail.DetailActivity
 import com.example.clicknchow.utils.Helpers.formatPrice
 
 class InProgressAdapter(private val listData: List<com.example.clicknchow.model.response.transaction.Data>) :

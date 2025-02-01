@@ -46,7 +46,7 @@ object Helpers {
 
     fun Long.convertLongToTime(dateFormat: String): String {
         val date = Date(this)
-        val format = SimpleDateFormat(dateFormat)
+        val format = SimpleDateFormat(dateFormat, Locale.getDefault())
         return format.format(date)
     }
 }
