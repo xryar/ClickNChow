@@ -5,6 +5,7 @@ import com.example.clicknchow.model.response.checkout.CheckoutResponse
 import com.example.clicknchow.model.response.home.HomeResponse
 import com.example.clicknchow.model.response.login.LoginResponse
 import com.example.clicknchow.model.response.register.RegisterResponse
+import com.example.clicknchow.model.response.transaction.TransactionResponse
 import io.reactivex.Observable
 import okhttp3.MultipartBody
 import retrofit2.http.Field
@@ -44,6 +45,9 @@ interface Endpoint {
 
     @GET("food")
     fun home(): Observable<Wrapper<HomeResponse>>
+
+    @GET("transaction")
+    fun transaction(): Observable<Wrapper<TransactionResponse>>
 
     @FormUrlEncoded
     @POST("checkout")

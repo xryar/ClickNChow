@@ -7,6 +7,8 @@ import com.example.clicknchow.model.response.home.Data
 import com.example.clicknchow.ui.home.homeviewpager.newtaste.HomeNewTasteFragment
 import com.example.clicknchow.ui.home.homeviewpager.popular.HomePopularFragment
 import com.example.clicknchow.ui.home.homeviewpager.recommended.HomeRecommendedFragment
+import com.example.clicknchow.ui.order.inprogress.InProgressFragment
+import com.example.clicknchow.ui.order.pastorders.PastOrderFragment
 
 class SectionPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(fragmentManager) {
 
@@ -15,30 +17,23 @@ class SectionPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(frag
     private var recommendedList: ArrayList<Data>? = ArrayList()
 
     override fun getItemCount(): Int {
-        return 3
+        return 2
     }
 
     override fun createFragment(position: Int): Fragment {
         val fragment: Fragment?
         when(position) {
             0 -> {
-                fragment = HomeNewTasteFragment()
+                fragment = InProgressFragment()
                 val bundle = Bundle()
                 bundle.putParcelableArrayList("data", newTasteList)
                 fragment.arguments = bundle
                 return fragment
             }
             1 -> {
-                fragment = HomePopularFragment()
+                fragment = PastOrderFragment()
                 val bundle = Bundle()
                 bundle.putParcelableArrayList("data", popularList)
-                fragment.arguments = bundle
-                return fragment
-            }
-            2 -> {
-                fragment = HomeRecommendedFragment()
-                val bundle = Bundle()
-                bundle.putParcelableArrayList("data", recommendedList)
                 fragment.arguments = bundle
                 return fragment
             }
