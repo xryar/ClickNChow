@@ -58,4 +58,5 @@
     <string name="view_my_order">View My Order</string>
     <string name="dummy_email">rusdi12322@hotbarber.com</string>
     <string name="dummy_password">12345678</string>
+    <string name="hi">Hi, %1$s</string>
 </resources>

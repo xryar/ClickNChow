@@ -24,7 +24,7 @@ class OrderPresenter(private val view: OrderContract.View): OrderContract.Presen
             }, { throwable ->
                 view.dismissLoading()
                 throwable.printStackTrace()
-                view.onTransactionFailed("Login failed: ${throwable.message}")
+                view.onTransactionFailed("failed: ${throwable.message}")
             })
         mCompositeDisposable.add(disposable)
     }

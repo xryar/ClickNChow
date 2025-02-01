@@ -101,6 +101,9 @@ class OrderFragment : Fragment(), OrderContract.View{
             it.setCancelable(false)
             it.window?.setBackgroundDrawableResource(android.R.color.transparent)
         }
+
+        binding.includeToolbar.toolbarAuth.title = "Your Orders"
+        binding.includeToolbar.toolbarAuth.subtitle = "Wait for the best meal"
     }
 
     override fun onDestroyView() {

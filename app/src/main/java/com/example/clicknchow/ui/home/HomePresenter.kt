@@ -24,8 +24,9 @@ class HomePresenter(private val view: HomeContract.View): HomeContract.Presenter
             }, { throwable ->
                 view.dismissLoading()
                 throwable.printStackTrace()
-                view.onHomeFailed("Login failed: ${throwable.message}")
+                view.onHomeFailed("failed: ${throwable.message}")
             })
+        view.dismissLoading()
         mCompositeDisposable.add(disposable)
     }
 
