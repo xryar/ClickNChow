@@ -6,39 +6,42 @@ import com.google.gson.annotations.SerializedName
 
 data class TransactionResponse(
     @Expose
-    @SerializedName("created_at")
-    val createdAt: String,
+    @SerializedName("current_page")
+    val currentPage: Int,
     @Expose
-    @SerializedName("deleted_at")
-    val deletedAt: Any,
+    @SerializedName("data")
+    val `data`: List<Data>,
     @Expose
-    @SerializedName("food")
-    val food: Food,
+    @SerializedName("first_page_url")
+    val firstPageUrl: String,
     @Expose
-    @SerializedName("food_id")
-    val foodId: Int,
+    @SerializedName("from")
+    val from: Int,
     @Expose
-    @SerializedName("id")
-    val id: Int,
+    @SerializedName("last_page")
+    val lastPage: Int,
     @Expose
-    @SerializedName("payment_url")
-    val paymentUrl: String,
+    @SerializedName("last_page_url")
+    val lastPageUrl: String,
     @Expose
-    @SerializedName("quantity")
-    val quantity: Int,
+    @SerializedName("links")
+    val links: List<Link>,
     @Expose
-    @SerializedName("status")
-    val status: String,
+    @SerializedName("next_page_url")
+    val nextPageUrl: String?,
+    @Expose
+    @SerializedName("path")
+    val path: String,
+    @Expose
+    @SerializedName("per_page")
+    val perPage: Int,
+    @Expose
+    @SerializedName("prev_page_url")
+    val prevPageUrl: String?,
+    @Expose
+    @SerializedName("to")
+    val to: Int,
     @Expose
     @SerializedName("total")
-    val total: Int,
-    @Expose
-    @SerializedName("updated_at")
-    val updatedAt: String,
-    @Expose
-    @SerializedName("user")
-    val user: User,
-    @Expose
-    @SerializedName("user_id")
-    val userId: Int
+    val total: Int
 )

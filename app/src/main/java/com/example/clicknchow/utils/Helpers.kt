@@ -14,8 +14,9 @@ import java.util.TimeZone
 
 object Helpers {
 
-    fun TextView.formatPrice(value: String) {
-        this.text = getCurrencyIDR(java.lang.Double.parseDouble(value))
+    fun TextView.formatPrice(value: String?) {
+        val numericValue = value?.toDoubleOrNull() ?: 0.0
+        this.text = getCurrencyIDR(numericValue)
     }
 
     private fun getCurrencyIDR(price: Double): String {
@@ -41,5 +42,11 @@ object Helpers {
                     null
                 }
             }).create()
+    }
+
+    fun Long.convertLongToTime(dateFormat: String): String {
+        val date = Date(this)
+        val format = SimpleDateFormat(dateFormat)
+        return format.format(date)
     }
 }

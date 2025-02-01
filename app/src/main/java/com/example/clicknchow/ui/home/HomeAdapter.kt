@@ -31,10 +31,8 @@ class HomeAdapter(private val listData: List<Data>) :
             .load(data.picturePath)
             .into(holder.binding.ivProduct)
         holder.itemView.setOnClickListener {
-            holder.itemView.setOnClickListener {
-                val detail = Intent(it.context, DetailActivity::class.java).putExtra("data", data)
-                it.context.startActivity(detail)
-            }
+            val detail = Intent(it.context, DetailActivity::class.java).putExtra("data", data)
+            it.context.startActivity(detail)
         }
 
     }

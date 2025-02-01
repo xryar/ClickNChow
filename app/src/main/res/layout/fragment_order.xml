@@ -14,10 +14,10 @@
         android:layout_height="wrap_content"/>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/ll_tab"
         android:layout_width="0dp"
         android:layout_height="0dp"
         style="@style/Base.Theme.ClickNChow.AppBarOverlay"
-        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/include_toolbar"
@@ -51,14 +51,17 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <LinearLayout
+        android:id="@+id/ll_empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
+        android:visibility="gone"
         android:layout_margin="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
 
         <ImageView
             android:id="@+id/iv_empty_order"

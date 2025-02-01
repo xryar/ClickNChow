@@ -1,31 +1,34 @@
 package com.example.clicknchow.model.response.transaction
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class User(
     @Expose
     @SerializedName("address")
-    val address: Any,
+    val address: String,
     @Expose
     @SerializedName("city")
-    val city: Any,
+    val city: String,
     @Expose
     @SerializedName("created_at")
-    val createdAt: String,
+    val createdAt: Long,
     @Expose
     @SerializedName("current_team_id")
-    val currentTeamId: Any,
+    val currentTeamId: String?,
     @Expose
     @SerializedName("email")
     val email: String,
     @Expose
     @SerializedName("email_verified_at")
-    val emailVerifiedAt: Any,
+    val emailVerifiedAt: String,
     @Expose
     @SerializedName("houseNumber")
-    val houseNumber: Any,
+    val houseNumber: String,
     @Expose
     @SerializedName("id")
     val id: Int,
@@ -34,10 +37,10 @@ data class User(
     val name: String,
     @Expose
     @SerializedName("phoneNumber")
-    val phoneNumber: Any,
+    val phoneNumber: String,
     @Expose
     @SerializedName("picturePath")
-    val picturePath: Any,
+    val picturePath: String,
     @Expose
     @SerializedName("profile_photo_url")
     val profilePhotoUrl: String,
@@ -46,5 +49,5 @@ data class User(
     val roles: String,
     @Expose
     @SerializedName("updated_at")
-    val updatedAt: String
-)
+    val updatedAt: Long?
+): Parcelable

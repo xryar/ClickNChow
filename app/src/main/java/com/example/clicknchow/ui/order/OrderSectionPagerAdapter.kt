@@ -3,15 +3,14 @@ package com.example.clicknchow.ui.order
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.clicknchow.model.response.home.Data
+import com.example.clicknchow.model.response.transaction.Data
 import com.example.clicknchow.ui.order.inprogress.InProgressFragment
 import com.example.clicknchow.ui.order.pastorders.PastOrderFragment
 
-class SectionPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(fragmentManager) {
+class OrderSectionPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(fragmentManager) {
 
-    private var newTasteList: ArrayList<Data>? = ArrayList()
-    private var popularList: ArrayList<Data>? = ArrayList()
-    private var recommendedList: ArrayList<Data>? = ArrayList()
+    private var inProgressList: ArrayList<Data>? = ArrayList()
+    private var pastOrderList: ArrayList<Data>? = ArrayList()
 
     override fun getItemCount(): Int {
         return 2
@@ -23,14 +22,14 @@ class SectionPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(frag
             0 -> {
                 fragment = InProgressFragment()
                 val bundle = Bundle()
-                bundle.putParcelableArrayList("data", newTasteList)
+                bundle.putParcelableArrayList("data", inProgressList)
                 fragment.arguments = bundle
                 return fragment
             }
             1 -> {
                 fragment = PastOrderFragment()
                 val bundle = Bundle()
-                bundle.putParcelableArrayList("data", popularList)
+                bundle.putParcelableArrayList("data", pastOrderList)
                 fragment.arguments = bundle
                 return fragment
             }
@@ -39,13 +38,12 @@ class SectionPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(frag
     }
 
     fun setData(
-        newTasteListParms: ArrayList<Data>?,
-        popularListParms: ArrayList<Data>?,
-        recommendedListParms: ArrayList<Data>?
+        inProgressParms: ArrayList<Data>?,
+        pastOrderParms: ArrayList<Data>?
     ) {
-        newTasteList = newTasteListParms
-        popularList = popularListParms
-        recommendedList = recommendedListParms
+        inProgressList = inProgressParms
+        pastOrderList = pastOrderParms
+        notifyDataSetChanged()
     }
 
 }
