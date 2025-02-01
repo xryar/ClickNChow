@@ -4,9 +4,6 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.clicknchow.model.response.home.Data
-import com.example.clicknchow.ui.home.homeviewpager.newtaste.HomeNewTasteFragment
-import com.example.clicknchow.ui.home.homeviewpager.popular.HomePopularFragment
-import com.example.clicknchow.ui.home.homeviewpager.recommended.HomeRecommendedFragment
 import com.example.clicknchow.ui.order.inprogress.InProgressFragment
 import com.example.clicknchow.ui.order.pastorders.PastOrderFragment
 
