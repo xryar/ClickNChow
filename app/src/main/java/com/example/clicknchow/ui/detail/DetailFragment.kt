@@ -34,7 +34,7 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         (activity as DetailActivity).toolbarDetail()
-
+        // i will change it later 2
         data = requireActivity().intent.getParcelableExtra("data")
         initView(data)
 

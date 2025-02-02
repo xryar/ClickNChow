@@ -1,5 +1,6 @@
 package com.example.clicknchow.ui.order.pastorders
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +29,11 @@ class PastOrderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        pastOrderList = arguments?.getParcelableArrayList("data")
+        pastOrderList =  if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            arguments?.getParcelableArrayList("data")
+        } else {
+            arguments?.getParcelableArrayList("data", Data::class.java)
+        }
         if (!pastOrderList.isNullOrEmpty()) {
             adapter = PastOrderAdapter(pastOrderList!!)
             val layoutManager = LinearLayoutManager(activity)

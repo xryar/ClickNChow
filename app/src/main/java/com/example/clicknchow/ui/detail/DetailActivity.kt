@@ -23,6 +23,7 @@ class DetailActivity : AppCompatActivity() {
                 .findFragmentById(R.id.nav_host_detail) as NavHostFragment
             val navController = navHostFragment.navController
             val bundle = Bundle()
+            // i will change it later 1
             bundle.putParcelable("data", it.get("data") as Parcelable?)
             navController.setGraph(navController.graph, bundle)
         }
