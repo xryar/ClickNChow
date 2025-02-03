@@ -1,5 +1,6 @@
 package com.example.clicknchow.ui.detail
 
+import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
 import android.view.View
@@ -23,8 +24,11 @@ class DetailActivity : AppCompatActivity() {
                 .findFragmentById(R.id.nav_host_detail) as NavHostFragment
             val navController = navHostFragment.navController
             val bundle = Bundle()
-            // i will change it later 1
-            bundle.putParcelable("data", it.get("data") as Parcelable?)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                bundle.putParcelable("data", it.getParcelable("data", Parcelable::class.java))
+            } else {
+                bundle.putParcelable("data", it.getParcelable("data"))
+            }
             navController.setGraph(navController.graph, bundle)
         }
     }

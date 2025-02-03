@@ -1,5 +1,6 @@
 package com.example.clicknchow.ui.detail
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,8 +35,11 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         (activity as DetailActivity).toolbarDetail()
-        // i will change it later 2
-        data = requireActivity().intent.getParcelableExtra("data")
+        data = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requireActivity().intent.getParcelableExtra("data", Data::class.java)
+        } else {
+            requireActivity().intent.getParcelableExtra<Data>("data")
+        }
         initView(data)
 
         binding.btnOrderNow.setOnClickListener {
