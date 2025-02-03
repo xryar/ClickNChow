@@ -5,8 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.example.clicknchow.ClickNChow
 import com.example.clicknchow.databinding.FragmentProfileBinding
+import com.example.clicknchow.model.response.login.User
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.gson.Gson
 
 class ProfileFragment : Fragment() {
 
@@ -27,7 +31,19 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        showUserInfo()
         showViewPager()
+    }
+
+    private fun showUserInfo(){
+        val user = ClickNChow.getApp().getUser()
+        val userResponse = Gson().fromJson(user, User::class.java)
+        binding.tvUsername.text = userResponse.name
+        binding.tvGmail.text = userResponse.email
+        Glide.with(requireActivity())
+            .load(userResponse.profile_photo_url)
+            .circleCrop()
+            .into(binding.ivUser)
     }
 
     private fun showViewPager() {
